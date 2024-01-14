@@ -1,3 +1,10 @@
 [workers]
 192.168.0.111
 192.168.0.112
+
+
+#[worker1]
+#worker1
+
+#[worker2]
+#worker2
