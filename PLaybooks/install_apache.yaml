@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Apache Web Service
+    dnf:
+      name: httpd
+      state: latest
+  - name: Start APache Service
+    service:
+      name: httpd
+      state: started

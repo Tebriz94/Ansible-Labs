@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Apache Web Service
+    dnf:
+      name: httpd
+      state: latest
+  - name: Start APache Service
+    service:
+      name: httpd
+      state: started
+  - name: Create firewall rule for apache service 
+    firewalld:
+      service: http 
+      zone: public 
+      permanent: yes 
+      immediate: yes 
+      state: enabled
